@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  database:
+      image: postgres
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=test_greatsoft
+      logging:
+        driver: ${LOGGING_DRIVER:-json-file}
+      ports:
+        - "5432:5432"
