@@ -2,6 +2,18 @@ version: "3.7"
 
 services:
   back-end:
+    image: django_todo:latest
+    restart: always
+    ports:
+      - 8000:8000
   front-end:
+    image: front_end:latest
+    restart: always
+    ports:
+      - 3000:3000
   admin-panel:
+    restart: always
+    image: admin:latest
+    ports:
+      - 3001:3001
 
