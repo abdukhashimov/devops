@@ -11,3 +11,8 @@ services:
         driver: ${LOGGING_DRIVER:-json-file}
       ports:
         - "5432:5432"
+
+networks:
+  default:
+    external:
+      name: database-and-service

@@ -26,3 +26,7 @@ services:
     ports:
       - 3001:3001
 
+networks:
+  default:
+    external:
+      name: database-and-service
