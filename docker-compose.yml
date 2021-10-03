@@ -2,18 +2,27 @@ version: "3.7"
 
 services:
   back-end:
-    image: django_todo:latest
+    build:
+      context: ../back-end
+      dockerfile: ../back-end/Dockerfile
+    # image: django_todo:latest
     restart: always
     ports:
       - 8000:8000
   front-end:
-    image: front_end:latest
+    build:
+      context: ../front-end
+      dockerfile: ../front-end/Dockerfile
+    # image: front_end:latest
     restart: always
     ports:
       - 3000:3000
   admin-panel:
+    build:
+      context: ../admin
+      dockerfile: ../admin/Dockerfile
     restart: always
-    image: admin:latest
+    # image: admin:latest
     ports:
       - 3001:3001
 
